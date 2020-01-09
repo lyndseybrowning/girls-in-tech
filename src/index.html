@@ -47,6 +47,39 @@
                     <button type="button">Most Commented</button>
                 </li>
             </ul>
+
+            <section id="top10" class="section">
+                <div id="template" class="hidden">
+                    <figure class="video">
+                        <figcaption class="video__title">
+                            <span>{{rank}}</span> {{title}}
+                        </figcaption>
+                        <img
+                            src="{{src}}"
+                            alt="{{alt}}"
+                            class="video__thumbnail"
+                        />
+                        <div class="video__stats">
+                            <dl>
+                                <dt>Views</dt>
+                                <dd>{{views}}</dd>
+                            </dl>
+                            <dl>
+                                <dt>Likes</dt>
+                                <dd>{{likes}}</dd>
+                            </dl>
+                            <dl>
+                                <dt>Dislikes</dt>
+                                <dd>{{dislikes}}</dd>
+                            </dl>
+                            <dl>
+                                <dt>Comments</dt>
+                                <dd>{{comments}}</dd>
+                            </dl>
+                        </div>
+                    </figure>
+                </div>
+            </section>
         </main>
         <footer class="page-footer">
             Data Source:
@@ -56,5 +89,6 @@
                 >Kaggle Trending YouTube Video Statistics</a
             >
         </footer>
+        <script src="./scripts/top10.js"></script>
     </body>
 </html>

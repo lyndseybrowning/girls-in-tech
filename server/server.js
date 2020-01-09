@@ -15,7 +15,7 @@ const fields = {
     channel_title: 1,
     likes: 1,
     dislikes: 1,
-    comment_total: 1,
+    comment_count: 1,
     thumbnail_link: 1,
 };
 
@@ -32,7 +32,7 @@ database
             ({
                 category_id: categoryId,
                 channel_title: channel,
-                comment_total: comments,
+                comment_count: comments,
                 thumbnail_link: thumbnail,
                 title,
                 likes,
