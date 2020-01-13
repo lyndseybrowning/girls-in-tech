@@ -62,7 +62,16 @@
                     <figcaption class="video__title">
                         <span>{{rank}}</span> {{title}}
                     </figcaption>
-                    <img src="{{src}}" alt="{{alt}}" class="video__thumbnail" />
+                    <a
+                        href="https://www.youtube.com/watch?v={{videoId}}"
+                        target="_blank"
+                    >
+                        <img
+                            src="{{src}}"
+                            alt="{{alt}}"
+                            class="video__thumbnail"
+                        />
+                    </a>
                     <div class="video__stats">
                         <dl>
                             <dt>Views</dt>

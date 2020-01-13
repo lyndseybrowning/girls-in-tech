@@ -24,9 +24,10 @@ const displayData = ({ result }) => {
 
         let template = document.querySelector("#template").innerHTML;
 
+        template = template.replace("{{videoId}}", item.videoId);
         template = template.replace("{{src}}", item.thumbnail);
         template = template.replace("{{alt}}", item.title);
-        template = template.replace("{{rank}}", rank);
+        template = template.replace("{{rank}}", `${rank}.`);
         template = template.replace("{{title}}", item.title);
         template = template.replace("{{views}}", item.views);
         template = template.replace("{{likes}}", item.likes);

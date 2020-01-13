@@ -17,6 +17,7 @@ const fields = {
     dislikes: 1,
     comment_count: 1,
     thumbnail_link: 1,
+    video_id: 1,
 };
 
 database.loadDatabase();
@@ -39,6 +40,7 @@ database
         };
         const data = db.map(
             ({
+                video_id: videoId,
                 category_id: categoryId,
                 channel_title: channel,
                 comment_count: comments,
@@ -48,6 +50,7 @@ database
                 dislikes,
                 views,
             }) => ({
+                videoId,
                 title,
                 channel,
                 comments: Number(comments),
