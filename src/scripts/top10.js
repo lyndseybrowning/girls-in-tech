@@ -39,4 +39,24 @@ const displayData = ({ result }) => {
     element.innerHTML = html.join("");
 };
 
+const categories = document.querySelectorAll("[data-category]");
+
 getData().then(displayData);
+
+categories.forEach(category => {
+    const selectedClassName = "stat-group__item--selected";
+
+    category.addEventListener("click", e => {
+        const button = e.target;
+        const selectedCategory = document.querySelector(
+            `.${selectedClassName}`,
+        );
+
+        // remove selected class from existing category
+        selectedCategory.classList.remove(selectedClassName);
+        // add selected class to the clicked button
+        button.parentElement.classList.add(selectedClassName);
+
+        getData(button.dataset.category).then(displayData);
+    });
+});
