@@ -28,6 +28,15 @@ database
             return;
         }
 
+        const getUniqueEntries = entries => {
+            const uniqueEntries = entries.filter((entry, index, arr) => {
+                return (
+                    arr.findIndex(item => item.title === entry.title) === index
+                );
+            });
+
+            return uniqueEntries;
+        };
         const data = db.map(
             ({
                 category_id: categoryId,
@@ -50,7 +59,9 @@ database
             }),
         );
 
-        initialiseRoutes(app, data);
+        const uniqueEntries = getUniqueEntries(data);
+
+        initialiseRoutes(app, uniqueEntries);
 
         app.listen(PORT, () => console.log(`listening on port ${PORT}`));
         app.use(express.static(ROOT_DIR));
