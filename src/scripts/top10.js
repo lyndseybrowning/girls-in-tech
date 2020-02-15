@@ -26,9 +26,9 @@ const displayData = ({ result }) => {
 
         template = template.replace("{{videoId}}", item.videoId);
         template = template.replace("{{src}}", item.thumbnail);
-        template = template.replace("{{alt}}", item.title);
+        template = template.replace("{{alt}}", item._id);
         template = template.replace("{{rank}}", `${rank}.`);
-        template = template.replace("{{title}}", item.title);
+        template = template.replace("{{title}}", item._id);
         template = template.replace("{{views}}", item.views);
         template = template.replace("{{likes}}", item.likes);
         template = template.replace("{{dislikes}}", item.dislikes);

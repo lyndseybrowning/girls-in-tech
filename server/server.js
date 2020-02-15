@@ -6,13 +6,8 @@ const ROOT_DIR = "src";
 const PORT = 3000;
 const app = express();
 
-connect(client => {
-    console.log("connected to database");
-
-    const database = client.db("sample_airbnb");
-    const collection = database.collection("listingsAndReviews");
-
-    //initialiseRoutes(app, items);
+connect(items => {
+    initialiseRoutes(app, items);
 
     app.listen(PORT, () => console.log(`listening on port ${PORT}`));
     app.use(express.static(ROOT_DIR));

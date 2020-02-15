@@ -8,17 +8,40 @@ async function main(callback) {
     const uri =
         "mongodb+srv://user:d3z1oEaK6Mmgsy9P@girlsintech-brihq.mongodb.net/test?retryWrites=true&w=majority";
 
-    const client = new MongoClient(uri);
-
     try {
-        // connect to the MongoDB cluster
-        await client.connect();
+        MongoClient.connect(uri, { useUnifiedTopology: true }, (err, db) => {
+            if (err) throw err;
 
-        return callback(client);
+            const dbo = db.db("datasets");
+            const collection = dbo.collection("youtube-gb");
+
+            collection
+                .aggregate([
+                    { $match: {} },
+                    {
+                        $group: {
+                            _id: "$title",
+                            videoId: { $first: "$video_id" },
+                            description: { $first: "$description" },
+                            categoryId: { $first: "$category_id" },
+                            trendingDate: { $first: "$trending_date" },
+                            thumbnail: { $first: "$thumbnail_link" },
+                            likes: { $sum: "$likes" },
+                            dislikes: { $sum: "$dislikes" },
+                            comments: { $sum: "$comment_count" },
+                            views: { $sum: "$views" },
+                        },
+                    },
+                    { $sort: { views: -1 } },
+                ])
+                .toArray((err, results) => {
+                    if (err) throw err;
+
+                    callback(results);
+                });
+        });
     } catch (e) {
         console.error(e);
-    } finally {
-        await client.close();
     }
 }
 
