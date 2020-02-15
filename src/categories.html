@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Girls in Tech - YouTube Statistics</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body>
+        <header class="page-header">
+            <a href="/" class="logo">
+                <img
+                    src="images/yt_logo_rgb_dark.png"
+                    alt="YouTube Logo"
+                    class="logo__image"
+                />
+                Trending Video Statistics
+            </a>
+            <nav class="navigation">
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a href="/">Top 10</a>
+                    </li>
+                    <li class="menu__item menu__item--selected">
+                        <a href="categories.html">Categories</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="page-content">
+            <section class="section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>No. Videos</th>
+                        </tr>
+                    </thead>
+                    <tbody id="categories"></tbody>
+                </table>
+            </section>
+        </main>
+        <footer class="page-footer">
+            Data Source:
+            <a
+                href="https://www.kaggle.com/datasnaek/youtube-new"
+                target="_blank"
+                >Kaggle Trending YouTube Video Statistics</a
+            >
+        </footer>
+        <script src="./scripts/categories.js"></script>
+    </body>
+</html>

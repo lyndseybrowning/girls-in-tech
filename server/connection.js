@@ -15,30 +15,7 @@ async function main(callback) {
             const dbo = db.db("datasets");
             const collection = dbo.collection("youtube-gb");
 
-            collection
-                .aggregate([
-                    { $match: {} },
-                    {
-                        $group: {
-                            _id: "$title",
-                            videoId: { $first: "$video_id" },
-                            description: { $first: "$description" },
-                            categoryId: { $first: "$category_id" },
-                            trendingDate: { $first: "$trending_date" },
-                            thumbnail: { $first: "$thumbnail_link" },
-                            likes: { $sum: "$likes" },
-                            dislikes: { $sum: "$dislikes" },
-                            comments: { $sum: "$comment_count" },
-                            views: { $sum: "$views" },
-                        },
-                    },
-                    { $sort: { views: -1 } },
-                ])
-                .toArray((err, results) => {
-                    if (err) throw err;
-
-                    callback(results);
-                });
+            return callback(collection);
         });
     } catch (e) {
         console.error(e);

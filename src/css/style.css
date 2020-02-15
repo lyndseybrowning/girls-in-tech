@@ -46,6 +46,26 @@ button:hover {
     transition: 0.5s ease-in-out;
 }
 
+table {
+    width: 100%;
+}
+
+th {
+    background-color: #282828;
+    color: #f5f5f5;
+    font-weight: 400;
+    text-align: left;
+}
+
+td {
+    border-bottom: 0.1rem solid #f5f5f5;
+}
+
+th,
+td {
+    padding: 0.3rem;
+}
+
 .page-header {
     display: flex;
     align-items: center;
