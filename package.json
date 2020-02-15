@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "start": "concurrently 'npm run serve' 'open http://localhost:3000'",
-        "serve": "node ./server/server.js"
+        "serve": "node ./server/server.js",
+        "import": "mongoimport -d datasets -c youtube-gb --type csv --file ./datasets/youtube-gb.csv --headerline"
     },
     "keywords": [],
     "author": "Lyndsey Browning <lbrowning86@gmail.com> (http://lyndseyb.co.uk/)",
@@ -13,7 +14,7 @@
     "dependencies": {
         "concurrently": "5.0.2",
         "express": "4.17.1",
-        "nedb": "1.8.0"
+        "mongodb": "3.5.2"
     },
     "devDependencies": {
         "nodemon": "2.0.2"
