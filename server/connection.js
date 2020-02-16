@@ -10,7 +10,7 @@ async function main(callback) {
 
     try {
         MongoClient.connect(uri, {}, (err, db) => {
-            if (err) throw err;
+            if (err) console.log(err);
 
             const dbo = db.db("datasets");
             const collection = dbo.collection("youtube-gb");
