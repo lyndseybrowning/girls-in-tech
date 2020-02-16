@@ -1,4 +1,4 @@
-const URL = "http://localhost:3000/api/categories";
+const URL = "/api/categories";
 
 const getData = () => {
     const handleResponse = response => {

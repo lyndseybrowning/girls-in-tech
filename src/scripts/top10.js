@@ -1,4 +1,4 @@
-const URL = "http://localhost:3000/api/top10";
+const URL = "/api/top10";
 
 const getData = (category = "views") => {
     const handleResponse = response => {
