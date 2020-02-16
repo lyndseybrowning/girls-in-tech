@@ -2,7 +2,7 @@
     "name": "girls-in-tech",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "./server/server.js",
     "scripts": {
         "deploy": "NODE_ENV=production git push heroku master",
         "start": "npm run serve",
