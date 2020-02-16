@@ -4,13 +4,13 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "deploy": "git push heroku master",
+        "deploy": "NODE_ENV=production git push heroku master",
         "start": "concurrently 'npm run serve' 'open http://localhost:3000'",
         "serve": "node ./server/server.js",
         "import": "mongoimport -d datasets -c youtube-gb --type csv --file ./datasets/youtube-gb.csv --headerline"
     },
     "engines": {
-        "node": "12.x"
+        "node": "10.7.0"
     },
     "repository": {
         "type": "git",
