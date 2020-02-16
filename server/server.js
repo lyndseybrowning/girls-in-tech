@@ -1,9 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const connect = require("./connection");
 const initialiseRoutes = require("./initialiseRoutes");
 
 const ROOT_DIR = "src";
 const app = express();
+
+app.use(cors());
 
 if (process.env.NODE_ENV !== "production") {
     require("dot-env");
