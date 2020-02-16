@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "deploy": "NODE_ENV=production git push heroku master",
-        "start": "concurrently 'npm run serve' 'open http://localhost:3000'",
+        "start": "npm run serve",
         "serve": "node ./server/server.js",
         "import": "mongoimport -d datasets -c youtube-gb --type csv --file ./datasets/youtube-gb.csv --headerline"
     },
