@@ -9,6 +9,10 @@
         "serve": "node ./server/server.js",
         "import": "mongoimport -d datasets -c youtube-gb --type csv --file ./datasets/youtube-gb.csv --headerline"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lyndseybrowning/girls-in-tech.git"
+    },
     "keywords": [],
     "author": "Lyndsey Browning <lbrowning86@gmail.com> (http://lyndseyb.co.uk/)",
     "license": "MIT",
