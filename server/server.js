@@ -6,6 +6,10 @@ const ROOT_DIR = "src";
 const PORT = 3000;
 const app = express();
 
+if (process.env.NODE_ENV !== "production") {
+    require("dot-env");
+}
+
 connect(collection => {
     initialiseRoutes(app, collection);
 
