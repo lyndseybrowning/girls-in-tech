@@ -186,3 +186,30 @@ td {
 .video__stats dd {
     margin-left: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .page-header {
+        display: block;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo__image {
+        max-width: 15rem;
+        margin-bottom: 2rem;
+    }
+
+    .stat-group__item {
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: center;
+    }
+}

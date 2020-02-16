@@ -29,10 +29,16 @@ const displayData = ({ result }) => {
         template = template.replace("{{alt}}", item._id);
         template = template.replace("{{rank}}", `${rank}.`);
         template = template.replace("{{title}}", item._id);
-        template = template.replace("{{views}}", item.views);
-        template = template.replace("{{likes}}", item.likes);
-        template = template.replace("{{dislikes}}", item.dislikes);
-        template = template.replace("{{comments}}", item.comments);
+        template = template.replace("{{views}}", formatNumber(item.views));
+        template = template.replace("{{likes}}", formatNumber(item.likes));
+        template = template.replace(
+            "{{dislikes}}",
+            formatNumber(item.dislikes),
+        );
+        template = template.replace(
+            "{{comments}}",
+            formatNumber(item.comments),
+        );
 
         return template;
     });

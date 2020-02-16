@@ -23,7 +23,7 @@ getData().then(({ result }) => {
         return `
             <tr>
                 <td>${item.category}</td>
-                <td>${item.videos}</td>
+                <td>${formatNumber(item.videos)}</td>
             </tr>
         `;
     });
