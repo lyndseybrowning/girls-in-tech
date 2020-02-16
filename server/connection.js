@@ -9,7 +9,7 @@ async function main(callback) {
         "mongodb+srv://user:d3z1oEaK6Mmgsy9P@girlsintech-brihq.mongodb.net/test?retryWrites=true&w=majority";
 
     try {
-        MongoClient.connect(uri, { useUnifiedTopology: true }, (err, db) => {
+        MongoClient.connect(uri, {}, (err, db) => {
             if (err) throw err;
 
             const dbo = db.db("datasets");
