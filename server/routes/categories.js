@@ -9,9 +9,15 @@ const route = (app, collection) => {
 
     app.get("/api/categories", (request, response) => {
         collection
-            .aggregate([{ $group }, { $match: {} }])
+            .aggregate([
+                { $group },
+                { $match: {} },
+                { $sort: { categoryId: 1 } },
+            ])
             .toArray((err, result) => {
-                if (err) throw err;
+                if (err) {
+                    return response.status(500);
+                }
 
                 const categories = result
                     .map(({ categoryId, videos }) => {
@@ -22,6 +28,7 @@ const route = (app, collection) => {
                         if (!category) return null;
 
                         return {
+                            categoryId,
                             category: category.snippet.title,
                             videos,
                         };
@@ -29,7 +36,6 @@ const route = (app, collection) => {
                     .filter(Boolean);
 
                 response.json({
-                    status: 200,
                     result: categories,
                 });
             });
