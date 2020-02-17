@@ -187,6 +187,39 @@ td {
     margin-left: 0;
 }
 
+.btn-interaction {
+    display: flex;
+    justify-content: center;
+    border: none;
+    padding: 0.3rem;
+    background: none;
+    cursor: pointer;
+}
+
+.btn-interaction svg {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-interaction:hover {
+    background-color: white;
+}
+
+.btn-interaction:hover svg,
+.btn-interaction--selected svg {
+    transform: scale(1.1);
+    fill: #ff0000;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dotted #282828;
+}
+
 @media screen and (max-width: 768px) {
     .page-header {
         display: block;
